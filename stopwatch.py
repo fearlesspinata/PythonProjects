@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.8
 import time
 
 input("Press enter to start the timer.")
