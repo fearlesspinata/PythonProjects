@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.8
 
 import argparse
+import sys
+
 print("""
         maintained by:
         ___________                 .__                       __________.__               __          
@@ -23,6 +25,7 @@ try:
 
 except FileNotFoundError as error:
     print(f"Error: {error}")
+    sys.exit(1)
 
 else:
     with f:
