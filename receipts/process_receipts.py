@@ -8,12 +8,12 @@ try:
 except OSError:
     print("processed directory already exists")
 
-receipts = glob.glob('./new/receipt-[0-9]*.json')
+glob.glob('./new/receipt-[0-9]*.json')
 
 subtotal = 0.0
 num = 0
 
-for path in receipts:
+for path in glob.iglob('./new/receipt-[0-9]*.json'):
     with open(path) as f:
         content=json.load(f)
         subtotal += float(content['value'])
@@ -21,4 +21,4 @@ for path in receipts:
     shutil.move(path, destination)
     print(f"moved {path} to {destination}")
 
-print("Receipt subtotal: $%.2f" % subtotal)
+print(f"Receipt subtotal: ${round(subtotal, 2)}")
